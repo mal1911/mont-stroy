@@ -1,0 +1,148 @@
+.banner {
+  @include media-tablet {
+    height: 600px;
+
+    background-image: url("../img/background-tablet@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    @include retina {
+      background-image: url("../img/background-tablet@2x.jpg");
+    }
+  }
+  @include media-mobile {
+    height: 515px;
+
+    background-image: url("../img/background-mobile@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/background-mobile@2x.jpg");
+    }
+  }
+}
+
+.banner__container {
+  @include container();
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner__block {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+}
+
+.banner__header {
+  font-size: 72px;
+  line-height: 1.2;
+  color: $color-white;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include font-raleway-black();
+
+  @include media-tablet {
+    font-size: 38px;
+  }
+
+  @include media-mobile {
+    font-size: 16px;
+  }
+}
+
+.banner__title {
+  @include visually-hidden();
+}
+
+.banner__mobile-text {
+  display: none;
+
+  @include media-mobile {
+    display: inline;
+    font-size: 16px;
+
+    @include font-roboto-regular();
+    color: $color-white;
+    line-height: 1.2;
+
+    span {
+      color: $color-green;
+    }
+  }
+}
+
+.banner__text {
+  font-size: 24px;
+
+  @include font-roboto-medium();
+  color: $color-white;
+  line-height: 1.583;
+
+  span {
+    color: $color-green;
+  }
+
+  @include media-tablet {
+    @include font-roboto-regular();
+    font-size: 24px;
+  }
+
+  @include media-mobile {
+    font-size: 12px;
+    color: $color-black;
+    line-height: 1.5;
+    order: 10;
+    margin-top: 300px;
+
+    span {
+      color: $color-black;
+    }
+  }
+}
+
+.banner__button-block {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+
+  @include media-mobile {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    max-width: none;
+  }
+}
+
+.banner__button {
+  width: 250px;
+  height: 30px;
+  color: $color-black;
+
+  @include font-roboto-black();
+
+  font-size: 20px;
+  line-height: 1.3;
+
+  &--services {
+    @include button($color-green, $color-green);
+  }
+
+  &--contact {
+    @include button(transparent, $color-green) {
+      color: $color-white;
+    }
+
+    @include media-mobile {
+      margin-top: 10px;
+    }
+  }
+
+  @include media-tablet {
+    font-size: 16px;
+    line-height: 1.625;
+  }
+}

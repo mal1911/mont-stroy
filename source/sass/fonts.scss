@@ -1,0 +1,87 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto";
+
+  font-display: swap;
+  src: local("Roboto"),
+    url("../fonts/roboto.woff2") format("woff2"),
+    url("../fonts/roboto.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Roboto";
+
+  font-display: swap;
+  src: local("Roboto"),
+    url("../fonts/Robotomedium.woff2") format("woff2"),
+    url("../fonts/Robotomedium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Roboto";
+
+  font-display: swap;
+  src: local("Roboto"),
+    url("../fonts/robotobold.woff2") format("woff2"),
+    url("../fonts/robotobold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Roboto";
+
+  font-display: swap;
+  src: local("Roboto"),
+    url("../fonts/robotoblack.woff2") format("woff2"),
+    url("../fonts/robotoblack.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Raleway";
+
+  font-display: swap;
+  src: local("Raleway"),
+    url("../fonts/ralewaybold.woff2") format("woff2"),
+    url("../fonts/ralewaybold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Raleway";
+
+  font-display: swap;
+  src: local("Raleway"),
+    url("../fonts/ralewayblack.woff2") format("woff2"),
+    url("../fonts/ralewayblack.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Circe";
+
+  font-display: swap;
+  src: local("Circe"),
+    url("../fonts/circe-regular.woff2") format("woff2"),
+    url("../fonts/circe-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "ProximaNova";
+
+  font-display: swap;
+  src: local("ProximaNova"),
+    url("../fonts/ProximaNova-Bold.woff2") format("woff2"),
+    url("../fonts/ProximaNova-Bold.woff") format("woff");
+}

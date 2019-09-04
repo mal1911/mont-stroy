@@ -1,0 +1,231 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+
+  display: none;
+  box-sizing: border-box;
+  width: 490px;
+  min-height: 606px;
+  padding-right: 39px;
+  padding-left: 39px;
+
+  background-color: $color-blue;
+  transform: translate(-50%, -50%);
+
+
+  transition-duration: 500ms;
+}
+
+.modal--opened {
+  display: block;
+}
+
+.modal__block {
+  position: relative;
+}
+
+.modal__header {
+  margin-top: 31px;
+  margin-bottom: 0;
+
+  font-size: 28px;
+  line-height: 140.62%;
+  color: $color-white;
+
+  @include font-roboto-condensed-regular();
+}
+
+.modal__text {
+  width: 380px;
+  margin-top: 10px;
+
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-white;
+
+  @include font-pt-mono-regular();
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 31px;
+  margin-bottom: 10px;
+}
+
+.modal__form input[type="text"],
+.modal__form textarea {
+  box-sizing: border-box;
+  padding-left: 23px;
+
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-white;
+
+  background-color: #19baff; //$color-blue;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+
+  @include font-pt-mono-regular();
+}
+
+.modal__form input[type="text"]:hover,
+.modal__form textarea:hover {
+  padding-left: 21px;
+
+  border: 2px solid $color-white;
+}
+
+.modal__form textarea:hover {
+  padding-top: 12px;
+}
+
+.modal__form input[type="text"]::-webkit-input-placeholder,
+.modal__form textarea::-webkit-input-placeholder {
+  color: $color-white;
+
+  opacity: 0.5;
+}
+
+.modal__form input[type="text"]::-moz-placeholder,
+.modal__form textarea::-moz-placeholder {
+  color: $color-white;
+
+  opacity: 0.5;
+}
+
+.modal__form input[type="text"]:-moz-placeholder,
+.modal__form textarea:-moz-placeholder {
+  color: $color-white;
+
+  opacity: 0.5;
+}
+
+.modal__form input[type="text"]:-ms-input-placeholder,
+.modal__form textarea:-ms-input-placeholder {
+  color: $color-white;
+
+  opacity: 0.5;
+}
+
+.modal__form input[type="text"] {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 32px;
+}
+
+.modal__form input[type="checkbox"] + label {
+  position: relative;
+
+  align-self: flex-start;
+  width: 310px;
+  margin-top: 35px;
+  margin-left: 1px;
+  padding-left: 47px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-white;
+
+  cursor: pointer;
+
+  transition-duration: 500ms;
+  transition-property: opacity;
+
+  @include font-pt-mono-regular();
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 16px;
+    height: 16px;
+
+    background-image: url("../img/question-check-off.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+
+.modal__form input[type="checkbox"] + label:hover {
+  opacity: 0.6;
+}
+
+.modal__form input[type="checkbox"] + label:active {
+  opacity: 0.3;
+}
+
+
+.modal__form input[type="checkbox"]:checked + label::before {
+  background-image: url("../img/question-check-on.svg");
+}
+
+.modal__form button {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 32px;
+  padding: 14px 79px;
+
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: $color-white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  background-color: $color-blue;
+  border: 1px solid $color-white;
+  border-radius: 5px;
+
+  transition-duration: 500ms;
+  transition-property: opacity;
+
+  @include font-roboto-condensed-bold();
+}
+
+.modal__form button:hover {
+  opacity: 0.6;
+}
+
+.modal__form button:active {
+  opacity: 0.3;
+}
+
+.modal__form button:focus {
+  outline: none;
+}
+
+.modal__form textarea {
+  width: 100%;
+  height: 104px;
+  padding-top: 14px;
+
+  resize: none;
+}
+
+.modal__close {
+  position: absolute;
+  top: -11px;
+  right: -19px;
+
+  display: block;
+  width: 17px;
+  height: 17px;
+
+  background-color: transparent;
+  background-image: url("../img/modal-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}

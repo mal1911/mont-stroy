@@ -1,0 +1,35 @@
+.call-menu {
+  @include menu();
+}
+
+.call-menu__phone-link {
+  font-size: 18px;
+  line-height: 1.111;
+  color: rgb(28, 28, 28);
+
+  @include font-roboto-bold();
+
+  transition-duration: 500ms;
+  transition-property: opacity;
+
+  &:hover,
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.call-menu__button-link {
+  margin-left: 10px;
+  @include button($color-green, $color-green) {
+    font-size: 16px;
+    @include font-roboto-medium();
+    color: $color-black;
+    line-height: 2.501;
+    text-align: center;
+    padding: 5px 20px;
+  }
+
+  @include media-tablet {
+    display: none;
+  }
+}

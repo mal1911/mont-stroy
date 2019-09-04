@@ -1,0 +1,21 @@
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-width: $mobile-min-width;
+  max-width: $desktop-width;
+}
+
+@media (min-width: $desktop-max-width) {
+  .container {
+    margin: 0 auto;
+    width: $desktop-max-width;
+  }
+}
+
+@media (min-width: $mobile-min-width) and (max-width: $desktop-max-width) {
+    .container {
+    width: 100%;
+  }
+}
+
