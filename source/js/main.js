@@ -87,8 +87,10 @@
     document.querySelector('.advantages').scrollIntoView({behavior: 'smooth'});
   };
 
+*/
+
   var onResize = function () {
-    var elementAboutText = document.querySelector('.about__text--last');
+/*    var elementAboutText = document.querySelector('.about__text--last');
     var aboutText = document.querySelector('.about__text--last span').textContent;
     var visibleElement = document.querySelector('.about__text--last span:nth-child(2)');
 
@@ -96,27 +98,37 @@
       visibleElement = document.createElement('span');
       elementAboutText.insertAdjacentElement('beforeend', visibleElement);
     }
+*/
 
-    if (screen.width < 1024) {
-      visibleElement.textContent = aboutText.slice(0, 237) + '..';
+    if (screen.width >= 1024) {
+      window.slider.initialize('advantages', null);
+      window.slider.initialize('partners', null);
+    } else if (screen.width >= 768 && screen.width < 1024) {
+      window.slider.initialize('advantages', 3);
+      window.slider.initialize('partners', 3);
     } else {
-      visibleElement.textContent = aboutText;
+      window.slider.initialize('advantages', 1);
+      window.slider.initialize('partners', 1);
     }
   };
-*/
+
+
   var main = function () {
-    window.slider.initialize('advantages');
+
   //  window.phoneMask.setMask(document.querySelector('#phone'));
   //  window.phoneMask.setMask(document.querySelector('#phone-modal'));
-  //  onResize();
+    onResize();
   };
-/*
+
+  window.addEventListener('resize', onResize);
+
+
+  /*
   modalFormElement.addEventListener('submit', onFormSubmit);
   modalCloseElement.addEventListener('click', onModalCloseClick);
   headerButtonElement.addEventListener('click', onHeaderButtonClick);
   overlayElement.addEventListener('click', onOverlayClick);
   scrollUpButton.addEventListener('click', onScrollUpButtonClick);
-  window.addEventListener('resize', onResize);
 */
   main();
 })();

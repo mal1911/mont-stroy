@@ -6,7 +6,6 @@
     background-color: #fefdff;
     padding-top: 30px;
     padding-bottom: 30px;
-
   }
 
   @include media-mobile {
@@ -59,6 +58,9 @@
   padding-left: 30px;
   padding-right: 30px;
 
+  &--disable {
+    display: none;
+  }
 
   img {
     opacity: 0.7;
@@ -152,13 +154,15 @@
 .advantages__indicator {
   width: 10px;
   height: 10px;
-  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 50%;
   background-color: rgb(221, 221, 221);
+
   &--active {
     background-color: $color-green;
   }
+
   &:last-child {
-    margin-left: 10px;
+    margin-right: 0;
   }
 }

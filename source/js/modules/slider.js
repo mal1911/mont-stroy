@@ -1,14 +1,16 @@
 'use strict';
 (function () {
-  var initialize = function (sliderClassName) {
-
+  var initialize = function (sliderClassName, visibleSlidesCount) {
     var sliderElement = document.querySelector('.' + sliderClassName);
-
     var sliderControlPrevElement = sliderElement.querySelector('.' + sliderClassName + '__control--prev');
     var sliderControlNextElement = sliderElement.querySelector('.' + sliderClassName + '__control--next');
 
     var slideElements = sliderElement.querySelectorAll('.' + sliderClassName + '__item');
     var indicatorElements = sliderElement.querySelectorAll('.' + sliderClassName + '__indicator');
+
+    if (!visibleSlidesCount) {
+      visibleSlidesCount = slideElements.length;
+    }
 
     var getElementIndex = function (element, elements) {
       var index = -1;
@@ -21,6 +23,27 @@
       return index;
     };
 
+    var getStartVisibleElementIndex = function () {
+      var curreentSladeElementIndex = getElementIndex(getCurrentSlideElement(), slideElements);
+
+      if (curreentSladeElementIndex < visibleSlidesCount) {
+        return 0;
+      } else {
+        return curreentSladeElementIndex - visibleSlidesCount + 1;
+      }
+    };
+
+    var setDisableElements = function () {
+      var startVisibleElementIndex = getStartVisibleElementIndex();
+      for (var i = 0; i < slideElements.length; i++) {
+        if (i >= startVisibleElementIndex && i < startVisibleElementIndex + visibleSlidesCount) {
+          slideElements[i].classList.remove(sliderClassName + '__item--disable');
+        } else {
+          slideElements[i].classList.add(sliderClassName + '__item--disable');
+        }
+      }
+    };
+
     var getCurrentSlideElement = function () {
       return sliderElement.querySelector('.' + sliderClassName + '__item--active');
     };
@@ -31,7 +54,7 @@
 
     var isIndicatorElements = function () {
       return indicatorElements.length > 0 ? true : false;
-    }
+    };
 
     var onControlPrevClick = function (evt) {
       evt.preventDefault();
@@ -72,6 +95,8 @@
       if (isIndicatorElements()) {
         indicatorElements[currentSlideIndex].classList.add(sliderClassName + '__indicator--active');
       }
+
+      setDisableElements();
     };
 
     if (sliderControlPrevElement) {
@@ -82,6 +107,7 @@
     }
 
     sliderElement.addEventListener('click', onIndicatorChange);
+    setDisableElements();
   };
 
   window.slider = {
