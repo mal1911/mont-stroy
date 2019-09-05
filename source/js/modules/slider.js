@@ -81,9 +81,6 @@
       var currentSlideIndex = getElementIndex(getCurrentSlideElement(), slideElements);
       var currentIndicatorIndex = getElementIndex(getCurrentIndicatorElement(), indicatorElements);
 
-      /*    console.log('curr: ' + currentSlideIndex);
-          console.log('new: ' + newSlideIndex);*/
-
       slideElements[currentSlideIndex].classList.remove(sliderClassName + '__item--active');
       if (isIndicatorElements()) {
         indicatorElements[currentIndicatorIndex].classList.remove(sliderClassName + '__indicator--active');
