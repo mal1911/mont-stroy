@@ -1,4 +1,6 @@
 .banner {
+  background-image: linear-gradient(90deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 100%);
+
   @include media-tablet {
     height: 600px;
 

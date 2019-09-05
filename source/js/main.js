@@ -4,6 +4,12 @@
   var noJsElement = document.querySelector('.no-js');
   noJsElement.classList.remove('no-js');
 
+
+
+
+
+
+  /*
   var footerElement = document.querySelector('footer');
 
   var onFooterClick = function (evt) {
@@ -97,19 +103,20 @@
       visibleElement.textContent = aboutText;
     }
   };
-
+*/
   var main = function () {
-    window.phoneMask.setMask(document.querySelector('#phone'));
-    window.phoneMask.setMask(document.querySelector('#phone-modal'));
-    onResize();
+    window.slider.initialize('advantages');
+  //  window.phoneMask.setMask(document.querySelector('#phone'));
+  //  window.phoneMask.setMask(document.querySelector('#phone-modal'));
+  //  onResize();
   };
-
+/*
   modalFormElement.addEventListener('submit', onFormSubmit);
   modalCloseElement.addEventListener('click', onModalCloseClick);
   headerButtonElement.addEventListener('click', onHeaderButtonClick);
   overlayElement.addEventListener('click', onOverlayClick);
   scrollUpButton.addEventListener('click', onScrollUpButtonClick);
   window.addEventListener('resize', onResize);
-
+*/
   main();
 })();

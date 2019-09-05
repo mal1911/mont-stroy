@@ -1,259 +1,164 @@
 .advantages {
-  background-color: transparent;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include media-tablet {
+    background-color: #fefdff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+  }
+
+  @include media-mobile {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
-.advantages .container {
-  position: relative;
-
-  display: flex;
-  padding-right: 136px;
-  padding-left: 134px;
-}
-
-.advantages__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: flex-start;
-  margin-top: 115px;
-
-  @include ul-reset();
-}
-
-.advantages__item {
-  position: relative;
-
+.advantages__container {
+  @include container();
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  box-sizing: border-box;
-  width: 48.7%;
-  min-height: 299px;
-  margin-bottom: 31px;
-  padding-right: 42px;
-  padding-left: 42px;
+  align-items: center;
 
-  word-wrap: break-word;
-
-  background-color: $color-white;
-  border: 1px solid $color-border;
-  border-left: 3px $color-blue solid;
-  cursor: pointer;
-
-  transition-property: background-color;
-  transition-duration: 500ms;
-
-}
-
-.advantages__item:hover {
-  background-color: $color-blue;
-}
-
-.advantages__item svg {
-  margin-top: 40px;
-  margin-bottom: 0;
-
-  fill: $color-blue;
-}
-
-.advantages__item--stopwatch svg {
-  width: 29px;
-  height: 35px;
-}
-
-.advantages__item--hired svg {
-  width: 35px;
-  height: 35px;
-}
-
-.advantages__item--detective svg {
-  width: 36px;
-  height: 31px;
-}
-
-.advantages__item--tag svg {
-  width: 35px;
-  height: 35px;
-}
-
-.advantages__item:hover svg {
-  fill: $color-white;
+  @include media-tablet {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .advantages__title {
-  margin-top: 20px;
-  margin-bottom: 0;
-
-  font-size: 24px;
-  line-height: 34px;
-  color: $color-blue;
-
-  @include font-roboto-condensed-regular();
+  @include visually-hidden();
 }
 
-.advantages__item:hover .advantages__title {
-  color: $color-white;
+.advantages__list {
+  @include menu();
+  width: 100%;
+  justify-content: space-around;
+
+  @include media-tablet {
+    justify-content: space-between;
+  }
+
+  @include media-mobile {
+    justify-content: center;
+  }
+}
+
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition-duration: 500ms;
+  transition-property: opacity;
+  cursor: pointer;
+
+  flex-basis: 25%;
+  height: 200px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+
+  img {
+    opacity: 0.7;
+  }
+
+  .advantages__text {
+    opacity: 0.7;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+
+    .advantages__text {
+      opacity: 1;
+    }
+  }
+
+  &--like img {
+    width: 62px;
+    height: 64px;
+  }
+
+  &--handshake img {
+    width: 74px;
+    height: 49px;
+  }
+
+  &--settings img {
+    width: 70px;
+    height: 69px;
+  }
+
+  @include media-tablet {
+    background-color: $color-white;
+    box-shadow: 0 10px 18px 2px rgba(0, 0, 0, 0.05);
+    flex-basis: 33%;
+    height: 200px;
+    z-index: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    img {
+      opacity: 0.3;
+    }
+
+    .advantages__text {
+      opacity: 0.3;
+    }
+
+    &:hover, &--active {
+      img {
+        opacity: 0.7;
+      }
+
+      .advantages__text {
+        opacity: 0.7;
+      }
+    }
+
+    &--active {
+      transform: scale(1.2, 1.2);
+      z-index: 1;
+    }
+  }
 }
 
 .advantages__text {
-  max-width: 100%;
-  margin-top: 16px;
-  margin-bottom: 50px;
-
-  font-size: 16px;
-  line-height: 22px;
-  color: $color-text;
-
-  @include font-pt-mono-regular();
-}
-
-.advantages__item:hover .advantages__text {
+  font-size: 14.759px;
+  text-align: center;
+  @include font-roboto-regular();
   color: $color-white;
-}
+  @include media-tablet {
+    color: $color-black;
 
-
-@include media-tablet {
-  .advantages .container {
-    padding-right: 25px;
-    padding-left: 25px;
-  }
-
-  .advantages__list {
-    margin-top: 54px;
-  }
-
-  .advantages__item {
-    width: 48%;
-    min-height: 305px;
-    margin-bottom: 30px;
-    padding-right: 20px;
-    padding-left: 25px;
-
-    border: 1px solid $color-border;
-    border-left: 3px $color-blue solid;
-  }
-
-  .advantages__item:nth-child(3),
-  .advantages__item:nth-child(4) {
-    min-height: 233px;
-  }
-
-  .advantages__item svg {
-    margin-top: 24px;
-    margin-bottom: 0;
-  }
-
-  .advantages__item--stopwatch svg {
-    width: 29px;
-    height: 35px;
-  }
-
-  .advantages__item--hired svg {
-    width: 35px;
-    height: 35px;
-  }
-
-  .advantages__item--detective svg {
-    width: 36px;
-    height: 31px;
-  }
-
-  .advantages__item--tag svg {
-    width: 35px;
-    height: 35px;
-  }
-
-  .advantages__title {
-    margin-top: 7px;
-    margin-bottom: 0;
-
-    font-size: 24px;
-    line-height: 34px;
-  }
-
-  .advantages__text {
-    margin-top: 8px;
-    margin-bottom: 20px;
-
-    font-size: 16px;
-    line-height: 22px;
   }
 }
 
-@include media-mobile {
-  .advantages .container {
-    padding-right: 0;
-    padding-left: 0;
+.advantages__indicators {
+  @include menu();
+  display: none;
+
+
+  @include media-tablet {
+    display: flex;
+    margin-top: 30px;
   }
+}
 
-  .advantages__list {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: 100%;
-    margin-top: 35px;
+.advantages__indicator {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: rgb(221, 221, 221);
+  &--active {
+    background-color: $color-green;
   }
-
-  .advantages__item {
-    width: 91%;
-    min-height: 310px;
-    margin-bottom: 20px;
-    padding-right: 12px;
-    padding-left: 24px;
-
-    border: 1px solid $color-border;
-    border-left: 3px $color-blue solid;
-  }
-
-  .advantages__item:nth-child(3) {
-    min-height: 231px;
-  }
-
-  .advantages__item:nth-child(4) {
-    min-height: 245px;
-  }
-
-  .advantages__item svg {
-    margin-top: 17px;
-    margin-bottom: 0;
-  }
-
-  .advantages__item--stopwatch svg {
-    width: 29px;
-    height: 35px;
-  }
-
-  .advantages__item--hired svg {
-    width: 35px;
-    height: 35px;
-  }
-
-  .advantages__item--detective svg {
-    width: 36px;
-    height: 31px;
-  }
-
-  .advantages__item--tag svg {
-    width: 35px;
-    height: 35px;
-  }
-
-  .advantages__title {
-    margin-top: 20px;
-    margin-bottom: 0;
-
-    font-size: 20px;
-    line-height: 140.62%;
-  }
-
-  .advantages__text {
-    max-width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    font-size: 16px;
-    line-height: 22px;
-    word-wrap: break-word;
+  &:last-child {
+    margin-left: 10px;
   }
 }
