@@ -5,10 +5,6 @@
   noJsElement.classList.remove('no-js');
 
 
-
-
-
-
   /*
   var footerElement = document.querySelector('footer');
 
@@ -90,15 +86,15 @@
 */
 
   var onResize = function () {
-/*    var elementAboutText = document.querySelector('.about__text--last');
-    var aboutText = document.querySelector('.about__text--last span').textContent;
-    var visibleElement = document.querySelector('.about__text--last span:nth-child(2)');
+    /*    var elementAboutText = document.querySelector('.about__text--last');
+        var aboutText = document.querySelector('.about__text--last span').textContent;
+        var visibleElement = document.querySelector('.about__text--last span:nth-child(2)');
 
-    if (!visibleElement) {
-      visibleElement = document.createElement('span');
-      elementAboutText.insertAdjacentElement('beforeend', visibleElement);
-    }
-*/
+        if (!visibleElement) {
+          visibleElement = document.createElement('span');
+          elementAboutText.insertAdjacentElement('beforeend', visibleElement);
+        }
+    */
 
     if (screen.width >= 1024) {
       window.slider.initialize('advantages', null);
@@ -114,9 +110,10 @@
 
 
   var main = function () {
+    window.toggle.initialize('services__list', 'services__header');
 
-  //  window.phoneMask.setMask(document.querySelector('#phone'));
-  //  window.phoneMask.setMask(document.querySelector('#phone-modal'));
+    //  window.phoneMask.setMask(document.querySelector('#phone'));
+    //  window.phoneMask.setMask(document.querySelector('#phone-modal'));
     onResize();
   };
 

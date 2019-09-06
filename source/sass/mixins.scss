@@ -46,6 +46,7 @@
   margin: 0;
   list-style: none;
   align-items: center;
+  flex-wrap: wrap;
   @content;
 }
 

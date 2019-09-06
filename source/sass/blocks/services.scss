@@ -1,0 +1,137 @@
+.services {
+  margin-top: 500px;
+}
+
+.services__container {
+  @include container();
+}
+
+.services__title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 30px;
+  @include font-raleway-black();
+  color: $color-black;
+  text-transform: uppercase;
+  line-height: 1.667;
+
+  &::after {
+    content: "";
+    width: 100%;
+    margin-left: 30px;
+    height: 2px;
+    background-color: $color-black;
+  }
+
+  @include media-tablet {
+    font-size: 26px;
+    line-height: 1.2;
+    &::after {
+      display: none;
+    }
+  }
+
+  @include media-mobile {
+    font-size: 20px;
+  }
+}
+
+.services__list {
+  @include menu();
+
+  @include media-tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 20px;
+  }
+
+  @include media-mobile {
+    height: auto;
+  }
+}
+
+.services__item {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  @include media-tablet {
+    width: 40%;
+    justify-content: flex-start;
+    flex-basis: auto;
+    margin-right: 0;
+    padding-bottom: 20px;
+  }
+}
+
+.services__header {
+  font-size: 16px;
+  @include font-raleway-black();
+  color: $color-black;
+  text-transform: uppercase;
+  line-height: 1.2;
+  width: 100%;
+
+  @include media-tablet {
+    position: relative;
+    font-size: 14px;
+    line-height: 1.857;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #f4f4f4;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 5px;
+      top: 50%;
+      transform: translateY(50%);
+      right: 10px;
+      background-image: url("../img/service-toggle.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+    }
+
+    &--opened + .services__block {
+      display: flex;
+    }
+  }
+}
+
+.no-js .services__block {
+  display: flex;
+}
+
+.services__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.services__link {
+  font-size: 13px;
+  @include font-roboto-regular();
+  color: rgba(51, 51, 51, 0.769);
+  line-height: 1.2;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
