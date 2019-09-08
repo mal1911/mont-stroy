@@ -1,5 +1,11 @@
 .call-menu {
   @include menu();
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.call-menu__item:first-child {
+  flex-shrink: 0;
 }
 
 .call-menu__phone-link {
@@ -11,22 +17,28 @@
 
   transition-duration: 500ms;
   transition-property: opacity;
-
   &:hover,
   &:active {
     opacity: 0.4;
   }
+
+  @include media-tablet {
+    font-size: 14px;
+    line-height: 1.429;
+  }
+
 }
 
 .call-menu__button-link {
-  margin-left: 10px;
+  margin-left: 26px;
   @include button($color-green, $color-green) {
     font-size: 16px;
     @include font-roboto-medium();
     color: $color-black;
-    line-height: 2.501;
     text-align: center;
-    padding: 5px 20px;
+    padding: 12px 35px;
+    margin-top: -13px;
+    max-width: 200px;
   }
 
   @include media-tablet {

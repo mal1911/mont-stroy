@@ -1,0 +1,7 @@
+.bottom-menu {
+  display: none;
+
+  @include media-tablet {
+    @include menu();
+  }
+}

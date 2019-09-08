@@ -1,8 +1,20 @@
 .banner {
-  background-image: linear-gradient(90deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 100%);
+  //  background-image: linear-gradient(90deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 100%);
+
+  /*
+  height: 1035px;
+
+  background-image: url("../img/background-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  */
+
+  padding-bottom: 50px;
 
   @include media-tablet {
-    height: 600px;
+
+    height: 550px;// 600px;
 
     background-image: url("../img/background-tablet@1x.jpg");
     background-repeat: no-repeat;
@@ -12,8 +24,10 @@
     @include retina {
       background-image: url("../img/background-tablet@2x.jpg");
     }
+
   }
   @include media-mobile {
+    /*
     height: 515px;
 
     background-image: url("../img/background-mobile@1x.jpg");
@@ -21,6 +35,7 @@
     @include retina {
       background-image: url("../img/background-mobile@2x.jpg");
     }
+    */
   }
 }
 
@@ -28,14 +43,15 @@
   @include container();
   position: relative;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
-  justify-content: center;
-}
+  padding-left: 15px;
+  padding-right: 10px;
 
-.banner__block {
-  display: flex;
-  flex-direction: column;
-  max-height: 500px;
+  @include media-tablet {
+    padding-left: 83px;
+    padding-right: 83px;
+  }
 }
 
 .banner__header {
@@ -43,12 +59,17 @@
   line-height: 1.2;
   color: $color-white;
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 150px;
+  margin-bottom: 0;
+  height: 195px;
+  overflow-y: hidden;
 
   @include font-raleway-black();
 
   @include media-tablet {
     font-size: 38px;
+    margin-top: 123px;
+    height: 108px;
   }
 
   @include media-mobile {
@@ -83,6 +104,11 @@
   @include font-roboto-medium();
   color: $color-white;
   line-height: 1.583;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 200px;
+  overflow-y: hidden;
+  max-width: 1000px;
 
   span {
     color: $color-green;
@@ -90,7 +116,12 @@
 
   @include media-tablet {
     @include font-roboto-regular();
-    font-size: 24px;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 178px;
+    overflow-y: hidden;
   }
 
   @include media-mobile {
@@ -109,7 +140,13 @@
 .banner__button-block {
   display: flex;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 620px;
+  margin-top: 5px;
+  margin-bottom: 0;
+
+  @include media-tablet {
+//    max-width: none;
+  }
 
   @include media-mobile {
     flex-direction: column;
@@ -120,8 +157,6 @@
 }
 
 .banner__button {
-  width: 250px;
-  height: 30px;
   color: $color-black;
 
   @include font-roboto-black();
@@ -143,8 +178,13 @@
     }
   }
 
+  width: 298px;
+  height: 54px;
+
   @include media-tablet {
     font-size: 16px;
     line-height: 1.625;
+    width: 288px;
+    height: 52px;
   }
 }

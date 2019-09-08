@@ -37,9 +37,9 @@
       var startVisibleElementIndex = getStartVisibleElementIndex();
       for (var i = 0; i < slideElements.length; i++) {
         if (i >= startVisibleElementIndex && i < startVisibleElementIndex + visibleSlidesCount) {
-          slideElements[i].classList.remove(sliderClassName + '__item--disable');
+          slideElements[i].classList.remove(sliderClassName + '__item--hide');
         } else {
-          slideElements[i].classList.add(sliderClassName + '__item--disable');
+          slideElements[i].classList.add(sliderClassName + '__item--hide');
         }
       }
     };
@@ -73,7 +73,9 @@
         showSlide(getElementIndex(indicatorElement, indicatorElements));
       } else {
         var slideElement = evt.target.closest('.' + sliderClassName + '__item');
-        showSlide(getElementIndex(slideElement, slideElements));
+        if (slideElement) {
+          showSlide(getElementIndex(slideElement, slideElements));
+        }
       }
     };
 
@@ -92,7 +94,6 @@
       if (isIndicatorElements()) {
         indicatorElements[currentSlideIndex].classList.add(sliderClassName + '__indicator--active');
       }
-
       setDisableElements();
     };
 

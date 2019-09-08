@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-  var ESC_KEYCODE = 27;
+//  var ESC_KEYCODE = 27;
   var noJsElement = document.querySelector('.no-js');
   noJsElement.classList.remove('no-js');
 
@@ -110,14 +110,32 @@
 
 
   var main = function () {
+    window.addEventListener('resize', onResize);
+
+    window.menuToggle.initialize('header__menu-toggle');
     window.toggle.initialize('services__list', 'services__header');
 
     //  window.phoneMask.setMask(document.querySelector('#phone'));
     //  window.phoneMask.setMask(document.querySelector('#phone-modal'));
     onResize();
-  };
 
-  window.addEventListener('resize', onResize);
+    /*
+        ymaps.ready(init);
+        function init() {
+          var myMap = new ymaps.Map('map__container', {
+            center: [55.631968, 37.618355],
+            zoom: 18,
+          });
+          var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            balloonContentBody: [
+              '<address>Варшавка SKY</address>',
+            ].join(''),
+          }, {preset: 'islands#greenIcon'});
+          myMap.geoObjects.add(myPlacemark);
+        };
+    */
+
+  };
 
 
   /*
@@ -128,4 +146,6 @@
   scrollUpButton.addEventListener('click', onScrollUpButtonClick);
 */
   main();
+
+
 })();

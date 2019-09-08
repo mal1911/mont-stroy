@@ -33,18 +33,23 @@
       });
       return heightLeft > heightRight ? heightLeft : heightRight;
     };
-
-    if (twoCol) {
-      containerElement.style.height = getContainerHeightClosedItems() + 'px';
-    } else {
-      containerElement.style.height = 'auto';
-    }
-
+    var setHeight = function () {
+      if (screen.width >= 768 && screen.width < 1024) {
+        twoCol = true;
+        containerElement.style.height = getContainerHeightClosedItems() + 'px';
+      } else {
+        twoCol = false;
+        containerElement.style.height = 'auto';
+      }
+    };
     var onContainerClick = function (evt) {
 
       var toggleElement = evt.target.closest('.' + toggleClassName);
 
-      //зачищаем открытые
+      /*
+      зачищаем открытые
+       */
+
       toggleElements.forEach(function (element) {
         if (element !== toggleElement && element.classList.contains(toggleClassName + '--opened')) {
           element.classList.remove(toggleClassName + '--opened');
@@ -72,22 +77,18 @@
           }
         }
         evt.preventDefault();
-      }
-    };
-
-    var onResize = function () {
-      if (screen.width >= 768 && screen.width < 1024) {
-        twoCol = true;
-        containerElement.style.height = getContainerHeightClosedItems() + 'px';
       } else {
-        twoCol = false;
-        containerElement.style.height = 'auto';
+        setHeight();
       }
     };
+    var onResize = function () {
+      setHeight();
+    };
 
+    setHeight();
     containerElement.addEventListener('click', onContainerClick);
     window.addEventListener('resize', onResize);
-  }
+  };
 
   window.toggle = {
     initialize: initialize,

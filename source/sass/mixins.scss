@@ -59,6 +59,7 @@
   justify-content: center;
   cursor: pointer;
   max-width: 300px;
+  overflow: hidden;
   border: 1px solid $border-color;
 
 
@@ -66,21 +67,6 @@
   &:active {
     box-shadow: 0 2px 4.75px 0.25px rgba(0, 255, 215, 0.6);
   }
-
-  /*
-  border-radius: 5px;
-  width: 170px;
-  height: 54px;
-  font-size: 14px;
-  font-family: 'Raleway';
-  color: $white;
-  font-weight: 800;
-  text-transform: uppercase;
-  text-align: center;
-  box-shadow: none;
-  appearance: none;
-  transition-property: background-color, border-color;
-  */
   @content;
 
   /*

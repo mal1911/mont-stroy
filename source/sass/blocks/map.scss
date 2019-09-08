@@ -1,0 +1,62 @@
+.map {
+}
+
+.map__container {
+  background-image: url("../img/map-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 807px;
+  position: relative;
+  border-bottom: 2px solid $color-green;
+
+  @include retina {
+    background-image: url("../img/map-desktop@2x.png");
+  }
+
+  @include media-tablet {
+    height: 348px;
+    background-image: url("../img/map-tablet@1x.png");
+
+    @include retina {
+      background-image: url("../img/map-tablet@2x.png");
+    }
+  }
+
+  @include media-mobile {
+    height: 211px;
+    background-image: url("../img/map-mobile@1x.png");
+
+    @include retina {
+      background-image: url("../img/map-mobile@2x.png");
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/ballon-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 72px;
+    height: 98px;
+    top: 37.5%;
+    left: 49.5%;
+  }
+}
+
+.map__title {
+  display: none;
+
+  @include media-mobile {
+    display: inline;
+
+    @include font-raleway-black();
+    font-size: 20px;
+    color: $color-black;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+}
+
