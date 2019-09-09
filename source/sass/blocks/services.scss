@@ -6,6 +6,11 @@
     padding-top: 8px;
     padding-bottom: 20px;
   }
+
+  @include media-mobile {
+    padding-top: 28px;
+    padding-bottom: 0;
+  }
 }
 
 .services__container {
@@ -16,6 +21,11 @@
   @include media-tablet {
     padding-left: 25px;
     padding-right: 10px;
+  }
+
+  @include media-mobile {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -53,6 +63,10 @@
 
   @include media-mobile {
     font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -109,6 +123,10 @@
     padding-right: 0;
     padding-bottom: 10px;
   }
+
+  @include media-mobile {
+    width: 100%;
+  }
 }
 
 .services__header {
@@ -126,15 +144,12 @@
     @include font-roboto-regular();
     position: relative;
     font-size: 14px;
-    //line-height: 1.857;
     margin: 0;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    //padding-top: 11px;
-    //padding-bottom: 11px;
     min-height: 50px;
 
     padding-left: 19px;
@@ -169,6 +184,20 @@
 
     &--opened + .services__block {
       display: flex;
+    }
+  }
+
+  @include media-mobile {
+    padding-left: 22px;
+    padding-right: 22px;
+
+    border: #f4f4f4 1px solid;
+
+    &:hover {
+      border-width: 1px;
+      border-color: rgb(0, 255, 215);
+      border-style: solid;
+      box-shadow: 0 2px 2px 0.5px rgba(0, 255, 216, 0.65);
     }
   }
 }
@@ -226,6 +255,14 @@
       box-shadow: 0 2px 2px 0.5px rgba(0, 255, 216, 0.65);
 
     }
+
+  }
+
+  @include media-mobile {
+    min-height: 39px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(232, 232, 232);
+    border-bottom-style: solid;
 
   }
 }

@@ -53,15 +53,21 @@
 
 .header__container {
   @include container();
-  padding-top: 7px;
-  padding-bottom: 0;
-  padding-left: 65px;
-  padding-right: 65px;
   display: flex;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+
 
   @include media-tablet {
     position: relative;
+    padding-top: 7px;
+    padding-bottom: 0;
+    padding-left: 65px;
+    padding-right: 65px;
+
   }
 
   @include media-mobile {
@@ -93,6 +99,7 @@
   span {
     @include visually-hidden();
   }
+
   @include media-tablet {
     margin-left: 37px;
     margin-top: -5px;
