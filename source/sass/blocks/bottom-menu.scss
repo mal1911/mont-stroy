@@ -5,3 +5,19 @@
     @include menu();
   }
 }
+
+@include media-tablet {
+  .bottom-menu__link {
+    font-size: 12px;
+    @include font-roboto-regular();
+    color: $color-white;
+    opacity: 0.5;
+    line-height: 1.2;
+    margin-right: 37px;
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
+}

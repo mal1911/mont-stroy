@@ -14,9 +14,13 @@
   align-items: center;
 
   @include media-tablet {
-    display: none;
-    left: 10%;
+    left: 0;
     transform: none;
+    top: -140px;
+    width: 411px;
+    padding-left: 49px;
+    padding-right: 49px;
+    padding-bottom: 29px;
   }
 }
 
@@ -24,7 +28,6 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-
 }
 
 .form h2 {
@@ -37,6 +40,15 @@
   margin-top: 43px;
   margin-bottom: 20px;
   width: 100%;
+
+  @include media-tablet {
+    font-size: 18px;
+    line-height: 1.978;
+    margin-top: 30px;
+    margin-bottom: 3px;
+    //margin-left: 25px;
+  }
+
 }
 
 .form input,
@@ -52,15 +64,44 @@
   line-height: 2.5;
   width: 100%;
   margin-bottom: 20px;
+
+  @include media-tablet {
+    font-size: 14px;
+    line-height: 35px;
+    height: 68px;
+    margin-bottom: 0;
+  }
+
 }
 
 .form input[name="name"],
 .form input[name="phone"] {
   width: 45%;
+
+  @include media-tablet {
+    width: 49%;
+  }
 }
+
+.form input[name="phone"] {
+  @include media-tablet {
+    width: 49%;
+  }
+}
+
+.form input[name="name"] {
+  @include media-tablet {
+    width: 41%;
+  }
+}
+
 
 .form textarea {
   margin-top: 8px;
+  @include media-tablet {
+    margin-top: 19px;
+    height: 52px;
+  }
 }
 
 .form p {
@@ -85,6 +126,19 @@
     opacity: 0.4;
     width: 187px;
   }
+
+  @include media-tablet {
+    font-size: 10px;
+    line-height: 12.82px;
+    margin-top: 11px;
+    margin-left: 0;
+    max-width: 250px;
+
+    &::after {
+      width: 250px;
+    }
+
+  }
 }
 
 .form button {
@@ -102,5 +156,15 @@
   &:hover,
   &:active {
     box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.3);
+  }
+
+  @include media-tablet {
+    font-size: 16px;
+    line-height: 35.6px;
+    width: 166px;
+    margin-top: 14px;
+    margin-left: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }

@@ -7,10 +7,17 @@
   @include container();
   padding-left: 15px;
   padding-right: 0;
+
+  @include media-tablet {
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 1px;
+    padding-bottom: 0;
+  }
 }
 
 .projects__title {
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 35px;
   padding-right: 10px;
 
@@ -32,6 +39,9 @@
   }
 
   @include media-tablet {
+    margin-top: 10px;
+    margin-bottom: 42px;
+
     font-size: 26px;
     line-height: 1.2;
     &::after {
@@ -48,16 +58,15 @@
   @include menu();
   justify-content: flex-start;
 
-  /*
   @include media-tablet {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-bottom: 20px;
   }
 
   @include media-mobile {
   }
-  */
+
 }
 
 .projects__item {
@@ -98,15 +107,25 @@
   }
   */
 
-  /*
   @include media-tablet {
-    width: 40%;
+    width: 724px;
+    height: 180px;
     justify-content: flex-start;
     flex-basis: auto;
     margin-right: 0;
-    padding-bottom: 20px;
+    margin-bottom: 9px;
+
+    @media (min-width: 769px) {
+      width: 94.27vw;
+      height: 23.44vw;
+
+      img {
+        width: 94.27vw;
+        height: 23.44vw;
+      }
+    }
+
   }
-  */
 }
 
 .projects__block {
@@ -123,6 +142,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+  @include media-tablet {
+    padding-left: 42px;
+    padding-right: 85px;
+
+  }
 }
 
 .projects__item--2x .projects__block {
@@ -142,12 +167,24 @@
     margin-top: 20px;
   }
 
+  @include media-tablet {
+    margin-top: 41px;
+    line-height: 1.2;
+  }
+
 }
 
 .projects__item--2x .projects__header {
   margin-top: 40px;
   font-size: 32px;
   line-height: 1.313;
+
+  @include media-tablet {
+    margin-top: 41px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
 }
 
 .projects__text {
@@ -163,6 +200,17 @@
   @media (max-width: 1200px) {
     margin-top: 0;
   }
+
+  @include media-tablet {
+    font-size: 18px;
+    line-height: 1.222;
+    height: 68px;
+
+    span {
+      display: none;
+    }
+  }
+
 }
 
 .projects__link {
@@ -189,5 +237,9 @@
     border: 2px solid $color-green;
     opacity: 1;
     background-image: url("../img/arrow-hover.svg");
+  }
+
+  @include media-tablet {
+    display: none;
   }
 }

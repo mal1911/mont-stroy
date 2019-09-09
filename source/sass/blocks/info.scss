@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 45px;
   }
 }
 
@@ -16,6 +17,12 @@
   color: rgba(255, 255, 254, 0.902);
   line-height: 2.375;
   @include font-roboto-regular();
+
+  @include media-tablet {
+      font-size: 12px;
+      line-height: 3.167;
+    margin-top: 0px;
+  }
 }
 
 .info__logo {
