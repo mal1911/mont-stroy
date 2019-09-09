@@ -24,6 +24,10 @@
     padding-left: 25px;
     padding-right: 25px;
   }
+
+  @media (min-width: 800px) {
+    padding-right: 32px;
+  }
 }
 
 .advantages__title {
