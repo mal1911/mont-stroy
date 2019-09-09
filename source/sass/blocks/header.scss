@@ -22,8 +22,9 @@
 
     @include media-tablet {
       display: none;
-      height: 550px;
+     // height: 550px;
 
+      /*
       background-image: url("../img/background-tablet@1x.jpg");
       background-repeat: no-repeat;
       background-position: center center;
@@ -32,9 +33,11 @@
       @include retina {
         background-image: url("../img/background-tablet@2x.jpg");
       }
+      */
     }
 
     @include media-mobile {
+      display: block;
       height: 515px;
       background-image: url("../img/background-mobile@1x.jpg");
 
@@ -63,10 +66,10 @@
 
   @include media-mobile {
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 12px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 6px;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -107,8 +110,12 @@
   }
 
   @include media-mobile {
+    background-image: url("../img/menu-toggle-mobile.svg");
+    margin-left: 0;
+    margin-top: -8px;
     width: 18px;
     height: 14px;
+    order: 2;
   }
 }
 
@@ -118,14 +125,10 @@
   justify-content: space-between;
 
   @include media-tablet {
-    //position: relative;
-
     justify-content: flex-end;
-
   }
 
   @include media-mobile {
-    display: none;
   }
 }
 

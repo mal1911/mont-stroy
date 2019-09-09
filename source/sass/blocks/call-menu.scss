@@ -2,6 +2,10 @@
   @include menu();
   flex-wrap: nowrap;
   flex-shrink: 0;
+
+  @include media-mobile {
+    display: none;
+  }
 }
 
 .call-menu__item:first-child {

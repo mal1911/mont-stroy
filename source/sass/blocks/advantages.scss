@@ -9,7 +9,7 @@
   }
 
   @include media-mobile {
-    padding-top: 10px;
+    padding-top: 2px;
     padding-bottom: 10px;
   }
 }
@@ -27,6 +27,13 @@
 
   @media (min-width: 800px) {
     padding-right: 32px;
+  }
+
+  @include media-mobile {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -153,6 +160,23 @@
       z-index: 1;
     }
   }
+
+  @include media-mobile {
+    box-sizing: border-box;
+    width: 76%;
+    flex-basis: auto;
+    box-shadow: none;
+    height: 168px;
+    border-width: 1px;
+    border-color: rgb(221, 221, 221);
+    border-style: solid;
+    padding-top: 0;
+    padding-left: 0; //30px;
+    padding-right: 0; // 30px;
+    padding-left: 30px;
+   padding-right: 30px;
+
+  }
 }
 
 .advantages__text {
@@ -165,6 +189,12 @@
     color: $color-black;
     font-size: 12px;
     line-height: 1.355;
+  }
+
+  @include media-mobile {
+    //padding-left: 30px;
+    //padding-right: 30px;
+    //width: 125px;
   }
 }
 
