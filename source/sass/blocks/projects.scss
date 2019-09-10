@@ -254,6 +254,7 @@
 }
 
 .projects__text {
+  max-width: 100%;
   margin-top: 20px;
   margin-bottom: 0;
   @include font-roboto-regular();
