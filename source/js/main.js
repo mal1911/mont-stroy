@@ -96,10 +96,10 @@
         }
     */
 
-    if (screen.width >= 1024) {
+    if (document.body.clientWidth >= 1024) {
       window.slider.initialize('advantages', null);
       window.slider.initialize('partners', null);
-    } else if (screen.width >= 768 && screen.width < 1024) {
+    } else if (document.body.clientWidth >= 768 && document.body.clientWidth < 1024) {
       window.slider.initialize('advantages', 3);
       window.slider.initialize('partners', 3);
     } else {
@@ -114,6 +114,7 @@
 
     window.menuToggle.initialize('header__menu-toggle');
     window.toggle.initialize('services__list', 'services__header');
+
 
     //  window.phoneMask.setMask(document.querySelector('#phone'));
     //  window.phoneMask.setMask(document.querySelector('#phone-modal'));

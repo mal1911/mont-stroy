@@ -34,7 +34,7 @@
       return heightLeft > heightRight ? heightLeft : heightRight;
     };
     var setHeight = function () {
-      if (screen.width >= 768 && screen.width < 1024) {
+      if (document.body.clientWidth >= 768 && document.body.clientWidth < 1024) {
         twoCol = true;
         containerElement.style.height = getContainerHeightClosedItems() + 'px';
       } else {

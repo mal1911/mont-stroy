@@ -9,7 +9,7 @@
   }
 
   @include media-mobile {
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 10px;
   }
 }
@@ -23,12 +23,16 @@
   display: flex;
   flex-direction: column;
 
-
   @include media-tablet {
     box-sizing: border-box;
     padding-left: 20px;
     padding-right: 20px;
     align-items: center;
+  }
+
+  @include media-mobile {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -64,7 +68,7 @@
     margin-top: 20px;
     margin-bottom: 45px;
     padding-right: 0;
-align-self: flex-start;
+    align-self: flex-start;
 
     span {
       display: inline;
@@ -77,6 +81,13 @@ align-self: flex-start;
 
   @include media-mobile {
     font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+
+    span {
+      display: none;
+    }
+
   }
 }
 
@@ -142,7 +153,6 @@ align-self: flex-start;
     padding-right: 0;
     padding-left: 0;
 
-
     margin-right: 15px;
 
     @media (min-width: 769px) {
@@ -155,11 +165,11 @@ align-self: flex-start;
     }
 
     &:nth-child(4n) {
-      margin-right: auto;
+      margin-right: 0;
     }
 
-      &--ava {
-    z-index: 4;
+    &--ava {
+      z-index: 4;
     }
 
     &--mirror {
@@ -173,7 +183,6 @@ align-self: flex-start;
     &--teplodom {
       z-index: 1;
     }
-
 
     img {
       opacity: 1;
@@ -195,6 +204,34 @@ align-self: flex-start;
     &--hide {
       display: none;
     }
+  }
+
+  @include media-mobile {
+    box-shadow: none;
+    width: 279px;
+    height: 135px;
+    margin-bottom: 0;
+
+    @media (min-width: 321px) and (max-width: 767px) {
+      width: 87.1875vw;
+      height: 42.1875vw;
+    }
+
+    margin-right: 0;
+
+    img {
+      width: 279px;
+      height: 135px;
+
+      @media (min-width: 321px) and (max-width: 767px) {
+        width: 87.1875vw;
+        height: 42.1875vw;
+      }
+    }
+
+    &--active {
+      transform: none;
+    }
 
   }
 }
@@ -207,6 +244,11 @@ align-self: flex-start;
     display: flex;
     margin-top: -7px;
     margin-right: 20px;
+  }
+
+  @include media-mobile {
+    margin-top: 7px;
+    margin-right: -7px;
   }
 }
 
@@ -238,6 +280,28 @@ align-self: flex-start;
     &--sheild {
       width: 8px;
       height: 8px;
+    }
+
+    &--teplodom {
+      width: 4px;
+      height: 4px;
+    }
+  }
+
+  @include media-mobile {
+    &--ava {
+      width: 7px;
+      height: 7px;
+    }
+
+    &--mirror {
+      width: 6px;
+      height: 6px;
+    }
+
+    &--sheild {
+      width: 5px;
+      height: 5px;
     }
 
     &--teplodom {
