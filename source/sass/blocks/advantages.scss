@@ -1,14 +1,17 @@
 .advantages {
+  margin-top: -378px;
   padding-top: 30px;
   padding-bottom: 46px;
 
   @include media-tablet {
+    margin-top: 0;
     background-color: #fefdff;
     padding-top: 30px;
     padding-bottom: 30px;
   }
 
   @include media-mobile {
+    margin-top: 171px;
     padding-top: 2px;
     padding-bottom: 10px;
   }

@@ -63,6 +63,7 @@
     </nav>
   </div>
 </header>
+
 <main>
   <section class="banner">
     <div class="banner__container">
@@ -80,6 +81,15 @@
         <a href="#" class="banner__button banner__button&#45;&#45;contact">Связаться с нами</a>
       </div>
     </div>
+    <picture>
+      <source type="image/webp" media="(min-width: 1024px)" srcset="img/background-desktop@1x.webp, img/background-desktop@2x.webp 2x">
+      <source type="image/webp" media="(min-width: 768px)" srcset="img/background-tablet@1x.webp, img/background-tablet@2x.webp 2x">
+      <source type="image/webp" srcset="img/background-mobile@1x.webp, img/background-mobile@2x.webp 2x">
+
+      <source media="(min-width: 1024px)" srcset="img/background-desktop@1x.jpg, img/background-desktop@2x.jpg 2x">
+      <source type="image/webp" media="(min-width: 768px)" srcset="img/background-tablet@1x.jpg, img/background-tablet@2x.jpg 2x">
+      <img src="img/background-mobile@1x.jpg" srcset="img/background-mobile@2x.jpg 2x" alt="Mount Stroy">
+    </picture>
   </section>
   <section class="advantages">
     <div class="advantages__container">
@@ -439,8 +449,6 @@
             <source type="image/webp" media="(min-width: 768px)" srcset="img/teplodom-tablet@1x.png, img/teplodom-tablet@2x.png 2x">
             <img src="img/teplodom-desktop@1x.png" srcset="img/teplodom-desktop@2x.png 2x" alt="Teplodom">
           </picture>
-
-
         </li>
       </ul>
       <ul class="partners__indicators">
@@ -548,6 +556,9 @@
 <script src="https://webasr.yandex.net/jsapi/v1/webspeechkit.js"></script>
 <script src="https://webasr.yandex.net/jsapi/v1/webspeechkit-settings.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-<script src="js/bandle.min.js"></script>
+<script src="js/vendor.min.js"></script>
+<script src="js/main.min.js"></script>
+
+
 </body>
 </html>
