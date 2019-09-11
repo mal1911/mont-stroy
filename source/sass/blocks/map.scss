@@ -12,6 +12,7 @@
   height: 807px;
   position: relative;
   border-bottom: 2px solid $color-green;
+  z-index: 1;
 
   @include retina {
     background-image: url("../img/map-desktop@2x.png");
@@ -50,6 +51,7 @@
     height: 98px;
     top: 37.5%;
     left: 49.5%;
+    z-index: -1;
 
     @include media-tablet {
       background-image: url("../img/ballon-tablet.svg");

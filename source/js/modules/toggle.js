@@ -10,6 +10,8 @@
       var countColToggleElements = Math.round(toggleElements.length / 2);
       var heightLeft = 0;
       var heightRight = 0;
+
+      /*
       toggleElements.forEach(function (element, index) {
         var elementHeight = element.parentElement.clientHeight;
         if (index < countColToggleElements) {
@@ -18,12 +20,24 @@
           heightRight += elementHeight;
         }
       });
+*/
+
+      for (var i = 0; i < toggleElements.length; i++) {
+        var elementHeight = toggleElements[i].parentElement.clientHeight;
+        if (i < countColToggleElements) {
+          heightLeft += elementHeight;
+        } else {
+          heightRight += elementHeight;
+        }
+      }
       return heightLeft > heightRight ? heightLeft : heightRight;
     };
     var getContainerHeightOpenedItems = function () {
       // Определить высоту контейнера
       var heightLeft = 0;
       var heightRight = 0;
+
+      /*
       toggleElements.forEach(function (element) {
         if (element.classList.contains(toggleClassName + '--opened')) {
           heightLeft = element.parentElement.clientHeight;
@@ -31,8 +45,19 @@
           heightRight += element.parentElement.clientHeight;
         }
       });
+      */
+
+      for (var i = 0; i < toggleElements.length; i++) {
+        if (toggleElements[i].classList.contains(toggleClassName + '--opened')) {
+          heightLeft = toggleElements[i].parentElement.clientHeight;
+        } else {
+          heightRight += toggleElements[i].parentElement.clientHeight;
+        }
+      }
       return heightLeft > heightRight ? heightLeft : heightRight;
     };
+
+
     var setHeight = function () {
       if (document.body.clientWidth >= 768 && document.body.clientWidth < 1024) {
         twoCol = true;
@@ -49,16 +74,27 @@
       /*
       зачищаем открытые
        */
+      /*
+            toggleElements.forEach(function (element) {
+              if (element !== toggleElement && element.classList.contains(toggleClassName + '--opened')) {
+                element.classList.remove(toggleClassName + '--opened');
+                if (twoCol) {
+                  element.parentElement.style.flexBasis = 'auto';
+                  element.parentElement.style.order = 0;
+                }
+              }
+            });
+      */
 
-      toggleElements.forEach(function (element) {
-        if (element !== toggleElement && element.classList.contains(toggleClassName + '--opened')) {
-          element.classList.remove(toggleClassName + '--opened');
+      for (var i = 0; i < toggleElements.length; i++) {
+        if (toggleElements[i] !== toggleElement && toggleElements[i].classList.contains(toggleClassName + '--opened')) {
+          toggleElements[i].classList.remove(toggleClassName + '--opened');
           if (twoCol) {
-            element.parentElement.style.flexBasis = 'auto';
-            element.parentElement.style.order = 0;
+            toggleElements[i].parentElement.style.flexBasis = 'auto';
+            toggleElements[i].parentElement.style.order = 0;
           }
         }
-      });
+      }
 
       if (toggleElement) {
         if (toggleElement.classList.contains(toggleClassName + '--opened')) {
