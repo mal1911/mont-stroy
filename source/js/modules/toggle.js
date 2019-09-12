@@ -5,123 +5,93 @@
     var containerElement = document.querySelector('.' + containerClassName);
     var toggleElements = containerElement.querySelectorAll('.' + toggleClassName);
 
-    var getContainerHeightClosedItems = function () {
-      // Определить высоту контейнера
-      var countColToggleElements = Math.round(toggleElements.length / 2);
-      var heightLeft = 0;
-      var heightRight = 0;
-
-      /*
-      toggleElements.forEach(function (element, index) {
-        var elementHeight = element.parentElement.clientHeight;
-        if (index < countColToggleElements) {
-          heightLeft += elementHeight;
-        } else {
-          heightRight += elementHeight;
-        }
-      });
-*/
-
-      for (var i = 0; i < toggleElements.length; i++) {
-        var elementHeight = toggleElements[i].parentElement.clientHeight;
-        if (i < countColToggleElements) {
-          heightLeft += elementHeight;
-        } else {
-          heightRight += elementHeight;
-        }
-      }
-      return heightLeft > heightRight ? heightLeft : heightRight;
-    };
-    var getContainerHeightOpenedItems = function () {
+    var getContainerHeight = function () {
       // Определить высоту контейнера
       var heightLeft = 0;
       var heightRight = 0;
 
-      /*
-      toggleElements.forEach(function (element) {
-        if (element.classList.contains(toggleClassName + '--opened')) {
-          heightLeft = element.parentElement.clientHeight;
-        } else {
-          heightRight += element.parentElement.clientHeight;
+      var openedToggleElement = containerElement.querySelector('.' + toggleClassName + '--opened');
+      // есть открытые
+      if (openedToggleElement) {
+        for (var i = 0; i < toggleElements.length; i++) {
+          var elementHeight = toggleElements[i].parentElement.clientHeight;
+          if (toggleElements[i].classList.contains(toggleClassName + '--opened')) {
+            heightLeft = elementHeight;
+          } else {
+            heightRight += elementHeight;
+          }
         }
-      });
-      */
-
-      for (var i = 0; i < toggleElements.length; i++) {
-        if (toggleElements[i].classList.contains(toggleClassName + '--opened')) {
-          heightLeft = toggleElements[i].parentElement.clientHeight;
-        } else {
-          heightRight += toggleElements[i].parentElement.clientHeight;
+      } else {
+        var countColItemsCount = Math.round(toggleElements.length / 2);
+        for (i = 0; i < toggleElements.length; i++) {
+          elementHeight = toggleElements[i].parentElement.clientHeight;
+          if (i < countColItemsCount) {
+            heightLeft += elementHeight;
+          } else {
+            heightRight += elementHeight;
+          }
         }
       }
       return heightLeft > heightRight ? heightLeft : heightRight;
     };
 
 
-    var setHeight = function () {
+    var setContainerHeight = function () {
+      //
       if (document.body.clientWidth >= 768 && document.body.clientWidth < 1024) {
         twoCol = true;
-        containerElement.style.height = getContainerHeightClosedItems() + 'px';
+        containerElement.style.height = getContainerHeight() + 'px';
       } else {
         twoCol = false;
         containerElement.style.height = 'auto';
       }
     };
-    var onContainerClick = function (evt) {
 
-      var toggleElement = evt.target.closest('.' + toggleClassName);
+    var setOpenElement = function (element) {
+      element.classList.add(toggleClassName + '--opened');
+      if (twoCol) {
+        element.parentElement.style.marginBottom = 'auto';
+        element.parentElement.style.order = -1;
+      }
+    };
 
-      /*
-      зачищаем открытые
-       */
-      /*
-            toggleElements.forEach(function (element) {
-              if (element !== toggleElement && element.classList.contains(toggleClassName + '--opened')) {
-                element.classList.remove(toggleClassName + '--opened');
-                if (twoCol) {
-                  element.parentElement.style.flexBasis = 'auto';
-                  element.parentElement.style.order = 0;
-                }
-              }
-            });
-      */
+    var setCloseElement = function (element) {
+      element.classList.remove(toggleClassName + '--opened');
+      if (twoCol) {
+        element.parentElement.style.marginBottom = '0';
+        element.parentElement.style.order = 0;
+      }
+    };
 
+    var setCloseElements = function (currToggleElement) {
       for (var i = 0; i < toggleElements.length; i++) {
-        if (toggleElements[i] !== toggleElement && toggleElements[i].classList.contains(toggleClassName + '--opened')) {
-          toggleElements[i].classList.remove(toggleClassName + '--opened');
-          if (twoCol) {
-            toggleElements[i].parentElement.style.flexBasis = 'auto';
-            toggleElements[i].parentElement.style.order = 0;
-          }
+        if (toggleElements[i] !== currToggleElement && toggleElements[i].classList.contains(toggleClassName + '--opened')) {
+          setCloseElement(toggleElements[i]);
         }
       }
+    };
 
+    var onContainerClick = function (evt) {
+      var toggleElement = evt.target.closest('.' + toggleClassName);
+      setCloseElements(toggleElement);
       if (toggleElement) {
         if (toggleElement.classList.contains(toggleClassName + '--opened')) {
-          toggleElement.classList.remove(toggleClassName + '--opened');
-          if (twoCol) {
-            toggleElement.parentElement.style.flexBasis = 'auto';
-            toggleElement.parentElement.style.order = 0;
-            containerElement.style.height = getContainerHeightClosedItems() + 'px';
-          }
+          setCloseElement(toggleElement);
         } else {
-          toggleElement.classList.add(toggleClassName + '--opened');
-          if (twoCol) {
-            toggleElement.parentElement.style.flexBasis = '100%';
-            toggleElement.parentElement.style.order = -1;
-            containerElement.style.height = getContainerHeightOpenedItems() + 'px';
-          }
+          setOpenElement(toggleElement);
         }
-        evt.preventDefault();
-      } else {
-        setHeight();
       }
-    };
-    var onResize = function () {
-      setHeight();
+      setContainerHeight();
+      evt.preventDefault();
     };
 
-    setHeight();
+
+    var onResize = function () {
+      setCloseElements(null);
+      setContainerHeight();
+    };
+
+    setContainerHeight();
     containerElement.addEventListener('click', onContainerClick);
     window.addEventListener('resize', onResize);
   };
@@ -129,4 +99,5 @@
   window.toggle = {
     initialize: initialize,
   };
-})();
+}
+)();

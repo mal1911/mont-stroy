@@ -9,8 +9,7 @@
   }
 }
 
-.footer__container {
-  @include container();
+.footer .container {
   display: flex;
   flex-direction: column;
   padding-left: 15px;

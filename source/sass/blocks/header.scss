@@ -1,60 +1,8 @@
 .header {
   background-color: #fbfbfb;
-
-  /*
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-
-    height: 1035px;
-
-    background-image: url("../img/background-desktop@1x.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    @include retina {
-      background-image: url("../img/background-desktop@2x.jpg");
-    }
-
-    @include media-tablet {
-      display: none;
-     // height: 550px;
-
-      !*
-      background-image: url("../img/background-tablet@1x.jpg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-
-      @include retina {
-        background-image: url("../img/background-tablet@2x.jpg");
-      }
-      *!
-    }
-
-    @include media-mobile {
-      display: block;
-      height: 515px;
-      background-image: url("../img/background-mobile@1x.jpg");
-
-      @include retina {
-        background-image: url("../img/background-mobile@2x.jpg");
-      }
-    }
-
-  }
-  */
-
-
 }
 
-.header__container {
-  @include container();
+.header .container {
   display: flex;
   align-items: center;
   padding-top: 20px;
@@ -69,7 +17,6 @@
     padding-bottom: 0;
     padding-left: 65px;
     padding-right: 65px;
-
   }
 
   @include media-mobile {
@@ -136,10 +83,4 @@
   @include media-tablet {
     justify-content: flex-end;
   }
-
-  @include media-mobile {
-  }
-}
-
-.header__main-menu {
 }

@@ -62,8 +62,11 @@
   @include media-mobile {
     margin-top: 40px;
     margin-bottom: -5px;
-
   }
+}
+
+.form label {
+  @include visually-hidden();
 }
 
 .form input,
@@ -89,7 +92,6 @@
 
   @include media-mobile {
     height: 66px;
-
   }
 }
 
@@ -120,6 +122,7 @@
 
 .form textarea {
   margin-top: 8px;
+
   @include media-tablet {
     margin-top: 19px;
     height: 52px;
@@ -128,7 +131,6 @@
 
 .form p {
   font-size: 12px;
-  @include font-roboto-regular();
   color: rgba(0, 0, 0, 0.502);
   line-height: 1.5;
   text-align: center;
@@ -167,7 +169,8 @@
 }
 
 .form button {
-  @include button($color-black, $color-black);
+  border-color: $color-black;
+  background-color: $color-black;
   color: $color-white;
   @include font-raleway-bold();
   line-height: 2;

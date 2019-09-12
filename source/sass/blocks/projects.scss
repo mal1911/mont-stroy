@@ -12,11 +12,9 @@
   }
 }
 
-.projects__container {
-  @include container();
+.projects .container {
   padding-left: 15px;
   padding-right: 0;
-
 
   @include media-tablet {
     padding-left: 21px;
@@ -35,11 +33,11 @@
   margin-top: 0;
   margin-bottom: 35px;
   padding-right: 10px;
-
   display: flex;
   align-items: center;
   position: relative;
   font-size: 30px;
+
   @include font-raleway-black();
   color: $color-black;
   text-transform: uppercase;
@@ -56,9 +54,9 @@
   @include media-tablet {
     margin-top: 10px;
     margin-bottom: 42px;
-
     font-size: 26px;
     line-height: 1.2;
+
     &::after {
       display: none;
     }
@@ -85,7 +83,6 @@
   @include media-mobile {
     padding-bottom: 0;
   }
-
 }
 
 .projects__item {
@@ -111,35 +108,11 @@
 
   &--2x {
     width: 583px;
+
     img {
       width: 583px;
     }
   }
-
-/*
-  @media (max-width: 1200px) {
-    height: 24.17vw; //290px;
-    margin-right: 0.33vw;
-
-    img {
-      height: 24.17vw; //290px;
-    }
-
-    &--1x {
-      width: 24.17vw; //290px;
-      img {
-        width: 24.17vw; //290px;
-      }
-    }
-
-    &--2x {
-      width: 48.58vw; //583px;
-      img {
-        width: 48.58vw; //583px;
-      }
-    }
-  }
-*/
 
   @media (max-width: 1200px) {
     height: 23.17vw; //290px;
@@ -164,8 +137,6 @@
     }
   }
 
-
-
   @include media-tablet {
     width: 724px;
     height: 180px;
@@ -188,7 +159,6 @@
         height: 23.44vw;
       }
     }
-
   }
 
   @include media-mobile {
@@ -256,6 +226,7 @@
   font-size: 24px;
   height: 55px;
   overflow-y: hidden;
+
   @include font-roboto-bold();
   color: $color-white;
 
@@ -273,11 +244,11 @@
     width: 100%;
     text-align: center;
     font-size: 16px;
+
     @include font-raleway-bold();
     color: $color-white;
     line-height: 3.125;
   }
-
 }
 
 .projects__item--2x .projects__header {
@@ -304,7 +275,6 @@
   max-width: 100%;
   margin-top: 20px;
   margin-bottom: 0;
-  @include font-roboto-regular();
   font-size: 15px;
   color: rgba(255, 255, 255, 0.659);
   line-height: 1.466;
@@ -316,6 +286,7 @@
   }
 
   @include media-tablet {
+    margin-top: -14px;
     font-size: 18px;
     line-height: 1.222;
     height: 68px;
@@ -328,7 +299,6 @@
   @include media-mobile {
     display: none;
   }
-
 }
 
 .projects__link {
@@ -338,8 +308,11 @@
   width: 42px;
   height: 30px;
 
-  @include button(transparent, rgba(255, 255, 255, 0.341));
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.341);
   border: 2px solid rgba(255, 255, 255, 0.341);
+  transition-duration: 500ms;
+  transition-property: background-color;
 
   span {
     @include visually-hidden();
@@ -351,7 +324,9 @@
   background-size: 16px 6px;
 
   &:hover {
-    @include button($color-green, $color-green);
+    background-color: $color-green;
+    border-color: $color-green;
+
     border: 2px solid $color-green;
     opacity: 1;
     background-image: url("../img/arrow-hover.svg");

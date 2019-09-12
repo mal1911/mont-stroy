@@ -21,6 +21,7 @@
 
   transition-duration: 500ms;
   transition-property: opacity;
+
   &:hover,
   &:active {
     opacity: 0.4;
@@ -30,20 +31,20 @@
     font-size: 14px;
     line-height: 1.429;
   }
-
 }
 
 .call-menu__button-link {
   margin-left: 26px;
-  @include button($color-green, $color-green) {
-    font-size: 16px;
-    @include font-roboto-medium();
-    color: $color-black;
-    text-align: center;
-    padding: 12px 35px;
-    margin-top: -13px;
-    max-width: 200px;
-  }
+  border-color: $color-green;
+  background-color: $color-green;;
+  font-size: 16px;
+
+  @include font-roboto-medium();
+  color: $color-black;
+  text-align: center;
+  padding: 12px 35px;
+  margin-top: -13px;
+  max-width: 200px;
 
   @include media-tablet {
     display: none;

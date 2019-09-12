@@ -30,7 +30,6 @@
   @include media-mobile {
     margin-top: 15px;
     width: 100%;
-    //height: 211px;
     background-position: top center;
     height: 196px;
     background-image: url("../img/map-mobile@1x.png");
@@ -60,6 +59,7 @@
       top: 46.5%;
       left: 49.5%;
     }
+
     @include media-mobile {
       left: 43%;
       top: 50%;

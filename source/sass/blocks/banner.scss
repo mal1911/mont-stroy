@@ -1,45 +1,5 @@
 .banner {
   position: relative;
-  //  background-image: linear-gradient(90deg, rgba(13, 13, 13, 0) 0%, rgba(13, 13, 13, 0) 100%);
-  /*
-  height: 1035px;
-  background-image: url("../img/background-desktop@1x.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  */
-  //padding-bottom: 50px;
-  /*
-  @include media-tablet {
-    height: 550px;// 600px;
-    background-image: url("../img/background-tablet@1x.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    @include retina {
-      background-image: url("../img/background-tablet@2x.jpg");
-    }
-
-  }
-  */
-  /*
-  @include media-mobile {
-    !*
-    height: 515px;
-    background-position: center top;
-    background-image: url("../img/background-mobile@1x.jpg");
-
-    @include retina {
-      background-image: url("../img/background-mobile@2x.jpg");
-    }
-    *!
-    height: auto;
-    background-image: none;
-    padding-bottom: 10px;
-  }
-  */
-
   width: 100%;
   height: 1035px;
 
@@ -72,7 +32,7 @@
   }
 }
 
-.banner__container {
+.banner .container {
   position: relative;
 
   display: flex;
@@ -80,8 +40,6 @@
   justify-content: flex-start;
   padding-right: 10px;
   padding-left: 15px;
-
-  @include container();
 
   @include media-tablet {
     padding-right: 83px;
@@ -143,8 +101,6 @@
     text-align: center;
     color: $color-white;
 
-    @include font-roboto-regular();
-
     span {
       color: $color-green;
     }
@@ -172,8 +128,6 @@
 
     font-size: 16px;
     line-height: 1.2;
-
-    @include font-roboto-regular();
   }
 
   @include media-mobile {
@@ -201,10 +155,6 @@
   margin-top: 5px;
   margin-bottom: 0;
 
-  @include media-tablet {
-    //    max-width: none;
-  }
-
   @include media-mobile {
     flex-direction: column;
     align-items: center;
@@ -221,13 +171,22 @@
   font-size: 20px;
   line-height: 1.3;
   color: $color-black;
+  border-color: $color-green;
 
   @include font-roboto-black();
+
+  &--services {
+    background-color: $color-green;
+  }
+
+  &--contact {
+    background-color: transparent;
+    color: $color-white;
+  }
 
   @include media-tablet {
     width: 288px;
     height: 52px;
-
     font-size: 16px;
     line-height: 1.625;
   }
@@ -235,23 +194,9 @@
   @include media-mobile {
     width: 100%;
     height: 58px;
-
+    margin-top: 10px;
     font-size: 16px;
     line-height: 1.625;
     text-transform: uppercase;
-  }
-
-  &--services {
-    @include button($color-green, $color-green);
-  }
-
-  &--contact {
-    @include button(transparent, $color-green) {
-      color: $color-white;
-    }
-
-    @include media-mobile {
-      margin-top: 10px;
-    }
   }
 }

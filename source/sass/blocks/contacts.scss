@@ -1,5 +1,6 @@
 .contacts {
   order: 2;
+
   @include menu();
   flex-direction: column;
   align-items: flex-start;
@@ -37,12 +38,12 @@
 
 .contacts__item {
   margin-bottom: 35px;
+
   span {
     line-height: 13px;
     padding-left: 30px;
     margin-top: 0;
     font-size: 13px;
-    @include font-roboto-regular();
     color: rgba(255, 255, 255, 0.6);
 
     @include media-mobile {
@@ -76,7 +77,6 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
-  @include font-roboto-regular();
   color: $color-white;
   line-height: 29px;
   display: flex;

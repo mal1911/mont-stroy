@@ -19,8 +19,9 @@
 
 .bottom-menu__link {
   @include media-tablet {
+    transition-duration: 500ms;
+    transition-property: opacity;
     font-size: 12px;
-    @include font-roboto-regular();
     color: $color-white;
     opacity: 0.5;
     line-height: 1.2;
@@ -45,7 +46,4 @@
     border-bottom-color: rgb(98, 98, 98);
     border-bottom-style: solid;
   }
-
 }
-
-
