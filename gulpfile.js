@@ -61,7 +61,7 @@ gulp.task('refresh', function (done) {
 });
 
 gulp.task('images', function () {
-  return gulp.src('build/img/**/*.{png,jpg,svg}')
+  return gulp.src('source/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
       imageminJpegRecompress({
@@ -74,7 +74,7 @@ gulp.task('images', function () {
       pngquant({quality: [0.65, 0.7], speed: 5}),
       imagemin.svgo(),
     ]))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('source/img'));
 });
 
 gulp.task('copy-images', function () {
