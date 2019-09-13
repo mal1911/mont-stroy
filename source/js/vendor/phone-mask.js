@@ -44,5 +44,3 @@
     setMask: setMask,
   };
 })();
-
-

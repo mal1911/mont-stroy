@@ -3,7 +3,16 @@
   var initialize = function (containerClassName, toggleClassName) {
     var twoCol = false;
     var containerElement = document.querySelector('.' + containerClassName);
+
+    if (!containerElement) {
+      return;
+    }
+
     var toggleElements = containerElement.querySelectorAll('.' + toggleClassName);
+
+    if (!toggleElements) {
+      return;
+    }
 
     var getContainerHeight = function () {
       // Определить высоту контейнера

@@ -2,13 +2,13 @@
 (function () {
   var noJsElement = document.querySelector('.no-js');
   noJsElement.classList.remove('no-js');
-  var callButton = document.querySelector('.call-menu__button-link');
-  var servicesButton = document.querySelector('.banner__button--services');
-  var contactButton = document.querySelector('.banner__button--contact');
 
   var footerEndScroll = function (evt) {
-    document.querySelector('.footer__end-text').scrollIntoView({behavior: 'smooth'});
-    evt.preventDefault();
+    var footerEnd = document.querySelector('.footer__end-text');
+    if (footerEnd) {
+      footerEnd.scrollIntoView({behavior: 'smooth'});
+      evt.preventDefault();
+    }
   };
 
   var onCallButtonClick = function (evt) {
@@ -16,17 +16,33 @@
   };
 
   var onServicesButtonClick = function (evt) {
-    document.querySelector('.services').scrollIntoView({behavior: 'smooth'});
-    evt.preventDefault();
+    var services = document.querySelector('.services');
+    if (services) {
+      services.scrollIntoView({behavior: 'smooth'});
+      evt.preventDefault();
+    }
   };
 
   var onContactButtonClick = function (evt) {
     footerEndScroll(evt);
   };
 
-  callButton.addEventListener('click', onCallButtonClick);
-  servicesButton.addEventListener('click', onServicesButtonClick);
-  contactButton.addEventListener('click', onContactButtonClick);
+
+  var callButton = document.querySelector('.call-menu__button-link');
+  if (callButton) {
+    callButton.addEventListener('click', onCallButtonClick);
+  }
+  var servicesButton = document.querySelector('.banner__button--services');
+
+  if (servicesButton) {
+    servicesButton.addEventListener('click', onServicesButtonClick);
+  }
+
+  var contactButton = document.querySelector('.banner__button--contact');
+  if (contactButton) {
+    contactButton.addEventListener('click', onContactButtonClick);
+  }
+
 
   var onResize = function () {
     if (document.body.clientWidth >= 1024) {
@@ -50,12 +66,15 @@
     window.phoneMask.setMask(document.querySelector('#phone'));
 
     /* Дублируем contacts */
-
     var contactsElement = document.querySelector('.contacts');
-    var newContactElement = contactsElement.cloneNode(true);
-    newContactElement.classList.add('contacts--new');
-    var footerNavelement = document.querySelector('.footer__nav');
-    footerNavelement.insertAdjacentElement('beforeend', newContactElement);
+    if (contactsElement) {
+      var newContactElement = contactsElement.cloneNode(true);
+      newContactElement.classList.add('contacts--new');
+      var footerNavelement = document.querySelector('.footer__nav');
+      if (footerNavelement) {
+        footerNavelement.insertAdjacentElement('beforeend', newContactElement);
+      }
+    }
 
     /* map */
 

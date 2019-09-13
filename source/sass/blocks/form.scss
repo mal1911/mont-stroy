@@ -43,20 +43,24 @@
 
 .form h2 {
   font-size: 25px;
+
   @include font-raleway-black();
   color: $color-black;
   text-transform: uppercase;
   line-height: 2;
   text-align: center;
+  margin-left: 30px;
   margin-top: 43px;
   margin-bottom: 20px;
   width: 100%;
+  letter-spacing: 1px;
 
   @include media-tablet {
     font-size: 18px;
     line-height: 1.978;
+    margin-left: 0;
     margin-top: 30px;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
 
   @include media-mobile {
@@ -77,6 +81,8 @@
   height: 75px;
   resize: none;
   font-size: 20px;
+  letter-spacing: 1px;
+
   @include font-roboto-regular();
   color: $color-black;
   line-height: 2.5;
@@ -121,11 +127,17 @@
 }
 
 .form textarea {
-  margin-top: 8px;
+  margin-top: 6px;
+  padding-top: 7px;
 
   @include media-tablet {
     margin-top: 19px;
     height: 52px;
+    padding-top: 0;
+  }
+
+  @include media-mobile {
+    padding-top: 3px;
   }
 }
 
@@ -172,6 +184,7 @@
   border-color: $color-black;
   background-color: $color-black;
   color: $color-white;
+
   @include font-raleway-bold();
   line-height: 2;
   font-size: 25px;
@@ -192,11 +205,11 @@
     width: 166px;
     margin-top: 14px;
     margin-left: 0;
-    padding-top: 3px;
+    padding-top: 0;
     padding-bottom: 3px;
   }
 
   @include media-mobile {
-    margin-top: 16px;
+    margin-top: 19px;
   }
 }

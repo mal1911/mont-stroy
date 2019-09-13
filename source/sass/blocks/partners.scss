@@ -35,13 +35,14 @@
 }
 
 .partners__title {
-  margin-top: 20px;
+  margin-top: 22px;
   margin-bottom: 47px;
   padding-right: 157px;
   display: flex;
   align-items: center;
   position: relative;
   font-size: 30px;
+  letter-spacing: 1px;
 
   @include font-raleway-black();
   color: $color-black;
@@ -55,7 +56,7 @@
   &::after {
     content: "";
     width: 100%;
-    margin-left: 136px;
+    margin-left: 125px;
     height: 3px;
     background-color: $color-black;
   }
@@ -70,6 +71,8 @@
 
     span {
       display: inline;
+      letter-spacing: 1px;
+      margin-left: -2px;
     }
 
     &::after {
@@ -193,7 +196,8 @@
       opacity: 1;
     }
 
-    &:hover, &--active {
+    &:hover,
+    &--active {
       img {
         opacity: 0.7;
       }
@@ -259,9 +263,11 @@
   border-radius: 50%;
   cursor: pointer;
   background-color: rgb(221, 221, 221);
+
   &--active {
     background-color: $color-green;
   }
+
   &:last-child {
     margin-right: 0;
   }
@@ -308,7 +314,6 @@
       width: 4px;
       height: 4px;
     }
-
   }
 }
 

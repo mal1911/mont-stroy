@@ -2,14 +2,25 @@
 (function () {
   var initialize = function (sliderClassName, visibleSlidesCount) {
     var sliderElement = document.querySelector('.' + sliderClassName);
+
+    if (!sliderElement) {
+      return;
+    }
+
     var sliderControlPrevElement = sliderElement.querySelector('.' + sliderClassName + '__control--prev');
     var sliderControlNextElement = sliderElement.querySelector('.' + sliderClassName + '__control--next');
-
     var slideElements = sliderElement.querySelectorAll('.' + sliderClassName + '__item');
+
+    if (!slideElements) {
+      return;
+    }
+
     var indicatorElements = sliderElement.querySelectorAll('.' + sliderClassName + '__indicator');
+
 
     if (!visibleSlidesCount) {
       visibleSlidesCount = slideElements.length;
+
     }
 
     var getElementIndex = function (element, elements) {

@@ -5,6 +5,10 @@
   var initialize = function (toggleClassName) {
     var toggleElement = document.querySelector('.' + toggleClassName);
 
+    if (!toggleElement) {
+      return;
+    }
+
     var openMenu = function () {
       toggleElement.classList.add(toggleClassName + '--opened');
       document.addEventListener('keydown', onKeyPress);

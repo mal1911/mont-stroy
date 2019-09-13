@@ -42,11 +42,12 @@
   color: $color-black;
   text-transform: uppercase;
   line-height: 1.667;
+  letter-spacing: 1px;
 
   &::after {
     content: "";
     width: 100%;
-    margin-left: 154px;
+    margin-left: 142px;
     height: 3px;
     background-color: $color-black;
   }
@@ -203,7 +204,6 @@
   @include media-tablet {
     padding-left: 42px;
     padding-right: 85px;
-
   }
 
   @include media-mobile {

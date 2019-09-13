@@ -42,7 +42,7 @@
   &::after {
     content: "";
     position: absolute;
-    background-image: url("../img/ballon-desktop.png");
+    background-image: url("../img/ballon-desktop@1x.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -51,6 +51,10 @@
     top: 37.5%;
     left: 49.5%;
     z-index: -1;
+
+    @include retina {
+      background-image: url("../img/ballon-desktop@2x.png");
+    }
 
     @include media-tablet {
       background-image: url("../img/ballon-tablet.svg");
@@ -83,4 +87,3 @@
     line-height: 1.2;
   }
 }
-
