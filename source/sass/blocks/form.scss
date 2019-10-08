@@ -39,6 +39,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 23px;
+
+  @include media-tablet {
+    margin-top: 22px;
+  }
 }
 
 .form h2 {
@@ -69,40 +74,55 @@
   }
 }
 
-.form label {
-  @include visually-hidden();
-}
+.form__control {
+  display: flex;
+  flex-direction: column;
 
-.form input,
-.form textarea {
-  border: none;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  height: 75px;
-  resize: none;
   font-size: 20px;
   letter-spacing: 1px;
-
-  @include font-roboto-regular();
-  color: $color-black;
-  line-height: 2.5;
+  height: 75px;
   width: 100%;
   margin-bottom: 20px;
 
+  input,
+  textarea {
+    resize: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 28px;
+    overflow-y: hidden;
+
+    @include font-roboto-regular();
+    color: $color-black;
+    line-height: 2.5;
+  }
+
   @include media-tablet {
     font-size: 14px;
-    line-height: 35px;
     height: 68px;
     margin-bottom: 0;
+
+    input,
+    textarea {
+      font-size: 14px;
+      line-height: 20px;
+      height: 20px;
+    }
   }
 
   @include media-mobile {
-    height: 66px;
+    input,
+    textarea {
+      height: 20px;
+    }
   }
 }
 
-.form input[name="name"],
-.form input[name="phone"] {
+.form__control--name,
+.form__control--phone {
   width: 45%;
 
   @include media-tablet {
@@ -110,7 +130,7 @@
   }
 }
 
-.form input[name="phone"] {
+.form__control--phone {
   @include media-tablet {
     width: 49%;
   }
@@ -120,23 +140,25 @@
   }
 }
 
-.form input[name="name"] {
+.form__control--name {
   @include media-tablet {
     width: 41%;
   }
 }
 
-.form textarea {
-  margin-top: 6px;
+.form__control--message {
+  margin-top: -3px;
+  margin-bottom: 0;
   padding-top: 7px;
 
   @include media-tablet {
-    margin-top: 19px;
+    margin-top: 3px;
     height: 52px;
     padding-top: 0;
   }
 
   @include media-mobile {
+    margin-top: 0;
     padding-top: 3px;
   }
 }
@@ -166,7 +188,7 @@
   @include media-tablet {
     font-size: 10px;
     line-height: 12.82px;
-    margin-top: 11px;
+    margin-top: 4px;
     margin-left: 0;
     max-width: 250px;
 
@@ -175,7 +197,8 @@
     }
 
     @include media-mobile {
-      margin-top: 23px;
+      margin-top: 12px;
+      max-width: 255px;
     }
   }
 }
@@ -203,13 +226,13 @@
     font-size: 16px;
     line-height: 35.6px;
     width: 166px;
-    margin-top: 14px;
+    margin-top: 15px;
     margin-left: 0;
     padding-top: 0;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
   }
 
   @include media-mobile {
-    margin-top: 19px;
+    margin-top: 20px;
   }
 }

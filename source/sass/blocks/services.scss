@@ -168,6 +168,9 @@
     background-color: #f4f4f4;
     cursor: pointer;
 
+    transition-duration: 500ms;
+    transition-property: all;
+
     &::after {
       content: "";
       position: absolute;
@@ -246,6 +249,9 @@
   margin-top: 0;
   margin-bottom: 15px;
   max-width: 100%;
+  transition-duration: 500ms;
+  transition-property: all;
+
 
   &:hover {
     text-decoration: underline;

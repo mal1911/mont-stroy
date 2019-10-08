@@ -127,6 +127,8 @@
     opacity: 0.5;
     width: 270px;
     height: 135px;
+    transition-property: opacity;
+    transition-duration: 500ms;
   }
 
   &:hover,
