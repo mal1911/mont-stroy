@@ -75,6 +75,7 @@
         footerNavelement.insertAdjacentElement('beforeend', newContactElement);
       }
     }
+    /**/
     onResize();
   };
 
