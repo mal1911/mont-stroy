@@ -283,6 +283,7 @@
 
   @media (max-width: 1200px) {
     margin-top: 0;
+    font-size: 13px;
   }
 
   @include media-tablet {
@@ -290,12 +291,6 @@
     font-size: 18px;
     line-height: 1.222;
     height: 68px;
-
-    /*
-    span {
-      display: none;
-    }
-    */
   }
 
   @include media-mobile {
