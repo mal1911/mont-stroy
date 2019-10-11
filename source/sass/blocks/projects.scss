@@ -73,7 +73,7 @@
 .projects__list {
   @include menu();
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
 
   @include media-tablet {
     flex-direction: column;
@@ -92,84 +92,153 @@
   align-items: flex-start;
   margin-bottom: 4px;
   margin-right: 4px;
+  padding-left: 28px;
+  padding-right: 14px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+
   position: relative;
-  height: 290px; //15.1vw; //290px;
+  width: 290px;
+  min-height: 290px; //15.1vw; //290px;
 
-  img {
-    height: 290px;
-  }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-  &--1x {
-    width: 290px;
+  &--stadium {
+    background-image: url("../img/projects1-desktop@1x.png");
 
-    img {
-      width: 290px;
+    @include retina {
+      background-image: url("../img/projects1-desktop@2x.png");
     }
   }
 
-  &--2x {
-    width: 583px;
+  &--business-center {
+    background-image: url("../img/projects2-desktop@1x.png");
 
-    img {
-      width: 583px;
+    @include retina {
+      background-image: url("../img/projects2-desktop@2x.png");
+    }
+  }
+
+  &--cinema {
+    background-image: url("../img/projects3-desktop@1x.png");
+
+    @include retina {
+      background-image: url("../img/projects3-desktop@2x.png");
+    }
+  }
+
+  &--tk {
+    background-image: url("../img/projects4-desktop@1x.png");
+
+    @include retina {
+      background-image: url("../img/projects4-desktop@2x.png");
+    }
+  }
+
+  &--company,
+  &--theatre {
+    width: 583px;
+    padding-right: 75px;
+  }
+
+  &--company {
+    background-image: url("../img/projects5-desktop@1x.png");
+
+    @include retina {
+      background-image: url("../img/projects5-desktop@2x.png");
+    }
+  }
+
+  &--theatre {
+    background-image: url("../img/projects6-desktop@1x.png");
+
+    @include retina {
+      background-image: url("../img/projects6-desktop@2x.png");
     }
   }
 
   @media (max-width: 1200px) {
-    height: 23.17vw; //290px;
+    min-height: 23.17vw; //290px;
     margin-right: 0.33vw;
+    width: 23.17vw; //290px;
 
-    img {
-      height: 23.17vw; //290px;
+    &--company,
+    &--theatre {
+      width: 46.58vw; //583px;
     }
+  }
 
-    &--1x {
-      width: 23.17vw; //290px;
-      img {
-        width: 23.17vw; //290px;
+  @include media-tablet {
+    width: 724px;
+    min-height: 180px;
+    justify-content: flex-start;
+    flex-basis: auto;
+    margin-right: 0;
+    margin-bottom: 9px;
+    padding-left: 42px;
+    padding-right: 85px;
+
+    &--stadium {
+      background-image: url("../img/projects1-tablet@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects1-tablet@2x.png");
       }
     }
 
-    &--2x {
-      width: 46.58vw; //583px;
-      img {
-        width: 46.58vw; //583px;
+    &--business-center {
+      background-image: url("../img/projects2-tablet@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects2-tablet@2x.png");
+      }
+    }
+
+    &--cinema {
+      background-image: url("../img/projects3-tablet@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects3-tablet@2x.png");
+      }
+    }
+
+    &--tk {
+      background-image: url("../img/projects4-tablet@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects4-tablet@2x.png");
+      }
+    }
+
+    &--company {
+      background-image: url("../img/projects5-tablet@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects5-tablet@2x.png");
+      }
+    }
+
+    &--theatre {
+      background-image: url("../img/projects6-tablet@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects6-tablet@2x.png");
       }
     }
   }
 
   @media (min-width: 769px) and (max-width: 1023px) {
     width: 94.27vw;
-    height: 23.44vw;
+    min-height: 23.44vw;
 
+    /*
     img {
       width: 94.27vw;
       height: 23.44vw;
     }
-  }
-
-  @include media-tablet {
-    width: 724px;
-    height: 180px;
-    justify-content: flex-start;
-    flex-basis: auto;
-    margin-right: 0;
-    margin-bottom: 9px;
-
-    img {
-      width: 724px;
-      height: 180px;
-    }
-  }
-
-  @media (min-width: 321px) and (max-width: 767px) {
-    width: 87.5vw;
-    height: 31.25vw;
-
-    img {
-      width: 87.5vw;
-      height: 31.25vw;
-    }
+    */
   }
 
   @include media-mobile {
@@ -177,15 +246,67 @@
     margin-bottom: 10px;
     align-items: center;
     width: 280px;
-    height: 100px;
+    min-height: 100px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
 
-    img {
-      width: 280px;
-      height: 100px;
+    &--stadium {
+      background-image: url("../img/projects1-mobile@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects1-mobile@2x.png");
+      }
     }
+
+    &--business-center {
+      background-image: url("../img/projects2-mobile@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects2-mobile@2x.png");
+      }
+    }
+
+    &--cinema {
+      background-image: url("../img/projects3-mobile@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects3-mobile@2x.png");
+      }
+    }
+
+    &--tk {
+      background-image: url("../img/projects4-mobile@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects4-mobile@2x.png");
+      }
+    }
+
+    &--company {
+      background-image: url("../img/projects5-mobile@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects5-mobile@2x.png");
+      }
+    }
+
+    &--theatre {
+      background-image: url("../img/projects6-mobile@1x.png");
+
+      @include retina {
+        background-image: url("../img/projects6-mobile@2x.png");
+      }
+    }
+  }
+
+  @media (min-width: 321px) and (max-width: 767px) {
+    width: 87.5vw;
+    min-height: 31.25vw;
   }
 }
 
+/*
 .projects__block {
   box-sizing: border-box;
   padding-left: 28px;
@@ -211,7 +332,9 @@
     padding-right: 0;
   }
 }
+*/
 
+/*
 .projects__item--2x .projects__block {
   padding-right: 40px;
 
@@ -219,6 +342,7 @@
     padding-right: 0;
   }
 }
+*/
 
 .projects__header {
   margin-top: 52px;
@@ -251,7 +375,8 @@
   }
 }
 
-.projects__item--2x .projects__header {
+.projects__item--company .projects__header,
+.projects__item--theatre .projects__header {
   margin-top: 40px;
   font-size: 32px;
   line-height: 1.313;
@@ -278,8 +403,8 @@
   font-size: 15px;
   color: rgba(255, 255, 255, 0.659);
   line-height: 1.466;
-  height: 135px;
-  overflow-y: hidden;
+  //height: 135px;
+  //overflow-y: hidden;
 
   @media (max-width: 1200px) {
     margin-top: 0;
@@ -290,7 +415,7 @@
     margin-top: -14px;
     font-size: 18px;
     line-height: 1.222;
-    height: 68px;
+    //height: 68px;
   }
 
   @include media-mobile {
